@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/26 16:59:45 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/26 22:48:04 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ $(NAME):
 	gcc -g  -c -Werror -Wextra -Wall $(SRC) libft/libft.h
 	ar rc $(NAME)  *.o libft/*.o
 	ranlib $(NAME)
-	gcc libftprintf.a
 clean:
 	/bin/rm -f *.o
 
