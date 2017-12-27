@@ -111,8 +111,8 @@ int			ft_printf(const char *format, ...)
 	return (ret);
 }
 
-/*int main(void)
+int main(void)
 {	
 	ft_printf("%-05d", -42);
---	return (0);
-}*/
+	return (0);
+}

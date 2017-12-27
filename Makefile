@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/26 22:48:04 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/26 23:02:00 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ $(NAME):
 	make -C libft/ all
 	gcc -g  -c -Werror -Wextra -Wall $(SRC) libft/libft.h
 	ar rc $(NAME)  *.o libft/*.o
-	ranlib $(NAME)
 clean:
 	/bin/rm -f *.o
 
