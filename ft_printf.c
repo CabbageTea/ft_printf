@@ -1,17 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
+/*   Updated: 2017/12/27 21:29:58 by dglaser          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
-#include "libft/libft.h"
 
-int				ft_check_flags(const char *format, int i, t_con *todo, int x);
-int				ft_check_char(const char *format, int i, t_con *todo);
-int				ft_isspecifier(char c);
-int				ft_counttosp(const char *format, int i);
-
-int				ft_check_mod(const char *fo, int i, t_con *todo)
+int		ft_check_mod(const char *fo, int i, t_con *todo)
 {
 	while (fo[i] != '%' && (!ft_isspecifier(fo[i])) && fo[i] != '\0')
 	{
@@ -39,10 +40,10 @@ int				ft_check_mod(const char *fo, int i, t_con *todo)
 	return (0);
 }
 
-int				ft_icfs(const char *format, int i, t_con *todo)
+int		ft_icfs(const char *format, int i, t_con *todo)
 {
-	int			y;
-	int			x;
+	int		y;
+	int		x;
 
 	x = 1;
 	ft_check_flags(format, i + 1, todo, 0);
@@ -54,7 +55,7 @@ int				ft_icfs(const char *format, int i, t_con *todo)
 	return (x);
 }
 
-int				ft_percent(int i, int *flag, size_t *num)
+int		ft_percent(int i, int *flag, size_t *num)
 {
 	write(1, "%", 1);
 	*num = *num + 1;
@@ -62,7 +63,7 @@ int				ft_percent(int i, int *flag, size_t *num)
 	return (i + 2);
 }
 
-int					ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
+int		ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 {
 	int				flag;
 	static size_t	i;
@@ -90,7 +91,7 @@ int					ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 	return (num);
 }
 
-int				ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	int			ret;

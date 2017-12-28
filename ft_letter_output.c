@@ -1,43 +1,52 @@
-#include "ft_printf.h"
-int		ft_padding(int min, t_con todo);
-int		ft_prestrpad(int min, char *y, t_con *todo);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_letter_output.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/27 19:49:29 by dglaser           #+#    #+#             */
+/*   Updated: 2017/12/27 21:19:05 by dglaser          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		ft_nullstr(int i)
+#include "ft_printf.h"
+
+int			ft_nullstr(int i)
 {
 	ft_putstr("(null)");
 	return (6 + i);
 }
 
-int		ft_char_output(t_con *todo, va_list ap)
+int			ft_char_output(t_con *todo, va_list ap)
 {
-	int x;
-	char y;
-	x = 0;
+	int		x;
+	char	y;
 
+	x = 0;
 	if (todo->ch != '%')
 		y = va_arg(ap, int);
 	if (todo->ch == '%')
 		y = '%';
 	if (todo->min_width > 0 && todo->minus_flag == 0)
 		x = ft_padding(todo->min_width - 1, *todo);
-	
 	write(1, &y, 1);
 	if (todo->min_width > 0 && todo->minus_flag == 1)
 		x = ft_padding(todo->min_width - 1, *todo);
-
 	x++;
 	return (x);
 }
 
-int		ft_str_output(t_con *todo, va_list ap)
+int			ft_str_output(t_con *todo, va_list ap)
 {
-	int x;
-	char *y;
-	int i;
+	int		x;
+	char	*y;
+	int		i;
+
 	x = 0;
 	i = 0;
 	y = va_arg(ap, char *);
-	if ( y == NULL)
+	if (y == NULL)
 		return (ft_nullstr(x));
 	if (todo->min_width > 0 && todo->minus_flag == 0)
 		x = ft_padding(todo->min_width - ft_strlen(y), *todo);
@@ -49,28 +58,28 @@ int		ft_str_output(t_con *todo, va_list ap)
 			i++;
 		}
 	}
-	else ft_putstr(y);
+	else
+		ft_putstr(y);
 	if (todo->min_width > 0 && todo->minus_flag == 1)
 		x = ft_padding(todo->min_width - ft_strlen(y), *todo);
 	return (x + ft_strlen(y));
 }
 
-int		ft_percisionstring(t_con *todo, va_list ap)
+int			ft_percisionstring(t_con *todo, va_list ap)
 {
-	int i;
-	int pad;
-	char *y;
+	int		i;
+	int		pad;
+	char	*y;
 
 	i = 0;
 	y = va_arg(ap, char *);
-
 	if ((int)ft_strlen(y) > todo->precision)
 		pad = todo->precision;
 	else
-		pad = ft_strlen(y); 
+		pad = ft_strlen(y);
 	if (todo->min_width > todo->precision)
 	{
-		i = i + ft_prestrpad(todo->min_width - pad, y, todo);
+		i = i + ft_prestrpad(todo->min_width - pad, y, todo, 0);
 		return (i);
 	}
 	while (i < todo->precision && y[i] != '\0')
@@ -81,9 +90,10 @@ int		ft_percisionstring(t_con *todo, va_list ap)
 	return (i);
 }
 
-int		ft_letter_output(va_list ap, t_con *todo)
+int			ft_letter_output(va_list ap, t_con *todo)
 {
-	int x;
+	int		x;
+
 	x = 0;
 	if (todo->ch == 'c' || todo->ch == 'C' || todo->ch == '%')
 	{
@@ -101,7 +111,3 @@ int		ft_letter_output(va_list ap, t_con *todo)
 	}
 	return (x);
 }
-
-
-
-

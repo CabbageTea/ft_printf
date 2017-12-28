@@ -6,13 +6,11 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:59:15 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 17:59:17 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/27 21:27:58 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int		ft_isspecifier(char c);
 
 int		ft_check_char(const char *format, int i, t_con *todo)
 {

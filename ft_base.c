@@ -6,13 +6,11 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:49:16 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 17:49:23 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/27 21:23:44 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char		*ft_strrev(char *str);
 
 int			un_base_len(uintmax_t num, int base)
 {
