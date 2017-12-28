@@ -10,6 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+CC			=	gcc
+
+CFLAGS		=	-Wall -Wextra -Werror -I ./
+
 NAME = libftprintf.a
 
 PROGRAMNAME = ft_printf
@@ -28,11 +32,14 @@ SRC =	ft_check_flags.c \
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-
-$(NAME):
+#
+$(NAME): $(OBJ)
 	make -C libft/
-	gcc -I ./ -c -Werror -Wextra -Wall $(SRC) -I libft/
-	ar rc $(NAME)  *.o libft/*.o
+	ar rc $(NAME)  $(OBJ) libft/*.o
+#$(NAME):
+#	make -C libft/
+#	gcc -I ./ -c -Werror -Wextra -Wall $(SRC) -I libft/
+#	ar rc $(NAME)  *.o libft/*.o
 clean:
 	/bin/rm -f *.o
 
