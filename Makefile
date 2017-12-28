@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/27 20:15:54 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/28 11:14:26 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	make -C libft/ all
-	gcc -g  -c -Werror -Wextra -Wall $(SRC) libft/libft.h
+	make -C libft/
+	gcc -g  -c -Werror -Wextra -Wall $(SRC) -I libft/
 	ar rc $(NAME)  *.o libft/*.o
 clean:
 	/bin/rm -f *.o
