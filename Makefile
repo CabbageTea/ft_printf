@@ -42,10 +42,10 @@ $(NAME): $(OBJ)
 #	ar rc $(NAME)  *.o libft/*.o
 clean:
 	/bin/rm -f *.o
-
+	make -C libft/ clean
 fclean: clean
 	/bin/rm -f $(NAME)
-
+	/bin/rm -f libft/libft.a
 re: fclean all
 
 
