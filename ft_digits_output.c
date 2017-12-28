@@ -1,9 +1,9 @@
 #include "ft_printf.h"
-int ft_padding(int min, t_conditions todo);
-int	ft_precisionpadding(intmax_t num, t_conditions todo);
-int ft_preminuspadding(intmax_t num, t_conditions *todo);
-int	ft_prezeropadding(intmax_t num, t_conditions *todo);
-intmax_t		ft_dig_arg(va_list ap, t_conditions *todo)
+int ft_padding(int min, t_con todo);
+int	ft_precisionpadding(intmax_t num, t_con todo);
+int ft_preminuspadding(intmax_t num, t_con *todo);
+int	ft_prezeropadding(intmax_t num, t_con *todo);
+intmax_t		ft_dig_arg(va_list ap, t_con *todo)
 { 
 	if (todo->mod == 1)
 		return((signed char)va_arg(ap, int));
@@ -12,7 +12,7 @@ intmax_t		ft_dig_arg(va_list ap, t_conditions *todo)
 	if (todo->mod == 3)
 		return(va_arg(ap, long int));
 	if (todo->mod == 4)
-		return(va_arg(ap, long long int));
+		return(va_arg(ap, long long));
 	if (todo->mod == 5)
 		return(va_arg(ap, intmax_t));
 	if (todo->mod == 6)
@@ -21,7 +21,7 @@ intmax_t		ft_dig_arg(va_list ap, t_conditions *todo)
 		return(va_arg(ap, int));
 }
 
-uintmax_t ft_usdig_arg(va_list ap, t_conditions *todo)
+uintmax_t ft_usdig_arg(va_list ap, t_con *todo)
 {
 	if (todo->mod == 1)
 		return((unsigned char)va_arg(ap, unsigned int));
@@ -39,9 +39,9 @@ uintmax_t ft_usdig_arg(va_list ap, t_conditions *todo)
 		return(va_arg(ap, unsigned int));
 }
 
-int		ft_digits_output(va_list ap, t_conditions *todo)
+int		ft_digits_output(va_list ap, t_con *todo)
 {
-	intmax_t num;
+	long long num;
 	int len;
 	len = 0;
 	num = ft_dig_arg(ap, todo);
@@ -79,7 +79,7 @@ int		ft_digits_output(va_list ap, t_conditions *todo)
 	return (len);
 }
 
-int		ft_us_digits_output(va_list ap, t_conditions *todo)
+int		ft_us_digits_output(va_list ap, t_con *todo)
 {
 	uintmax_t num;
 	int len;

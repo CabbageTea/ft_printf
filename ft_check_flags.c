@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_flags.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/27 17:59:15 by dglaser           #+#    #+#             */
+/*   Updated: 2017/12/27 17:59:17 by dglaser          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	ft_isspecifier(char c);
-int	ft_check_char(const char *format, int i, t_conditions *todo)
+int		ft_isspecifier(char c);
+
+int		ft_check_char(const char *format, int i, t_con *todo)
 {
-	while(format[i] != '\0' && format[i] != '%')
+	while (format[i] != '\0' && format[i] != '%')
 	{
-		if(ft_isspecifier(format[i]))
+		if (ft_isspecifier(format[i]))
 		{
 			todo->ch = format[i];
 			return (1);
@@ -20,12 +33,12 @@ int	ft_check_char(const char *format, int i, t_conditions *todo)
 	return (0);
 }
 
-int	ft_width(int i, const char *format, t_conditions *todo)
+int		ft_width(int i, const char *format, t_con *todo)
 {
-	int temp;
+	int	temp;
 
 	temp = 0;
-	while (ft_isdigit(format[i])) 
+	while (ft_isdigit(format[i]))
 	{
 		temp = (temp * 10) + (format[i] - 48);
 		todo->min_width = temp;
@@ -34,14 +47,14 @@ int	ft_width(int i, const char *format, t_conditions *todo)
 	return (i);
 }
 
-int		ft_precision(int i, const char *format, t_conditions *todo)
+int		ft_precision(int i, const char *format, t_con *todo)
 {
-	char *temp;
-	int z;
+	char	*temp;
+	int		z;
 
 	z = 0;
 	temp = (char *)malloc(sizeof(char) * 12);
-	while(ft_isdigit(format[i]))
+	while (ft_isdigit(format[i]))
 	{
 		temp[z] = format[i];
 		z++;
@@ -54,64 +67,29 @@ int		ft_precision(int i, const char *format, t_conditions *todo)
 	return (i);
 }
 
-int		ft_check_flags(const char *format, int i, t_conditions *todo)
+int		ft_check_flags(const char *fo, int i, t_con *todo, int x)
 {
-	int x;
-	x = 0;
-	while (format[i] != '%' && (!ft_isspecifier(format[i])) && format[i] != '\0')
+	while (fo[i] != '%' && (!ft_isspecifier(fo[i])) && fo[i] != '\0')
 	{
-		if (format[i] == '#')
+		if (fo[i] == '#')
 			todo->hash_flag = 1;
-		else if (ft_isdigit(format[i]))
+		else if (ft_isdigit(fo[i]))
 		{
-			if (format[i] == '0')
-		   		todo->zero_flag = 1;
+			if (fo[i] == '0')
+				todo->zero_flag = 1;
 			else
-				i = ft_width(i, format, todo) - 1;
+				i = ft_width(i, fo, todo) - 1;
 		}
-		else if (format[i] == '.')
-			i = ft_precision(i + 1, format, todo);
-		else if (format[i] == '-')
+		else if (fo[i] == '.')
+			i = ft_precision(i + 1, fo, todo);
+		else if (fo[i] == '-')
 			todo->minus_flag = 1;
-		else if (format[i] == '+')
-		   todo->plus_flag = 1;
-		else if (format[i] == ' ' && !ft_isspecifier(format[i - 1]))
-		   todo->space_flag = 1;
+		else if (fo[i] == '+')
+			todo->plus_flag = 1;
+		else if (fo[i] == ' ' && !ft_isspecifier(fo[i - 1]))
+			todo->space_flag = 1;
 		i++;
 		x++;
 	}
 	return (x);
 }
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 
 #include "ft_printf.h"
 
-int		ft_prestrpad(int min, char *y, t_conditions *todo)
+int		ft_prestrpad(int min, char *y, t_con *todo)
 {
 	int i;
 	int x;
@@ -31,22 +31,3 @@ int		ft_prestrpad(int min, char *y, t_conditions *todo)
 	}
 	return (x + i);
 }
-
-/*void ft_putnbrlongmax(unsigned long long num)
-{
-	if (a < 0)
-	{
-		ft_putchar ('-');
-		a *= -1;
-	}
-	if (a >= 10)
-	{
-		ft_putnbrlongmax(a / 10);
-		ft_putnbrlongmax(a % 10);
-	}
-	else
-		ft_putchar(a + 0);
-}
-
-*/
-

@@ -1,31 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_base.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/27 17:49:16 by dglaser           #+#    #+#             */
+/*   Updated: 2017/12/27 17:49:23 by dglaser          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-char	*ft_strrev(char *str);
+char		*ft_strrev(char *str);
 
-int		un_base_len(uintmax_t num, int base)
+int			un_base_len(uintmax_t num, int base)
 {
-	int o; 
+	int		o;
+
 	o = 0;
 	while (num > 0)
 	{
-		num = num/base;
+		num = num / base;
 		o++;
 	}
 	return (o);
 }
 
-char	*ft_hex_base(uintmax_t num, int cap)
+char		*ft_hex_base(uintmax_t num, int cap)
 {
-	char *ret;
-	int x;
-	int i;
+	char	*ret;
+	int		x;
+	int		i;
 
 	i = 0;
 	x = 0;
 	ret = (char *)malloc(sizeof(char) * 30);
 	if (num == 0)
 		ret[i++] = x + 48;
-	while(num > 0)
+	while (num > 0)
 	{
 		x = num % 16;
 		num = num / 16;
@@ -42,12 +55,11 @@ char	*ft_hex_base(uintmax_t num, int cap)
 	return (ret);
 }
 
-
-char *ft_strrev(char *str)
+char		*ft_strrev(char *str)
 {
-	int i;
-	int x;
-	char *ret;
+	int		i;
+	int		x;
+	char	*ret;
 
 	x = 0;
 	i = ft_strlen(str) - 1;
@@ -62,11 +74,11 @@ char *ft_strrev(char *str)
 	return (ret);
 }
 
-
-char *ft_un_base(uintmax_t num, int base)
+char		*ft_un_base(uintmax_t num, int base)
 {
-	int len;
-	char *ret;
+	int		len;
+	char	*ret;
+
 	len = un_base_len(num, base);
 	ret = (char *)malloc(sizeof(char) * len + 1);
 	ret[len] = '\0';
@@ -79,4 +91,3 @@ char *ft_un_base(uintmax_t num, int base)
 	}
 	return (ret);
 }
-

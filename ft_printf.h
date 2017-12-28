@@ -26,22 +26,22 @@ typedef struct		s_conditions
 	int		intlen;
 	int		mod; // 1-6 hh,h,l,ll,j,z order
 
-} t_conditions;
+} t_con;
 
 
 
 void		ft_bzero(void *str, size_t n);
 int			ft_printf(const char *format, ...);
-int			ft_letter_output(va_list ap, t_conditions *todo);
-int			ft_precision(int i, const char *format, t_conditions *todo);
-int			ft_output(int i, va_list ap, t_conditions *todo);
-int			ft_digits_output(va_list ap, t_conditions *todo);
+int			ft_letter_output(va_list ap, t_con *todo);
+int			ft_precision(int i, const char *format, t_con *todo);
+int			ft_output(int i, va_list ap, t_con *todo);
+int			ft_digits_output(va_list ap, t_con *todo);
 int			ft_isspecifier(char c);
 char		*ft_un_base(uintmax_t num, int base);
-int			ft_octal_output(uintmax_t num, t_conditions *todo);
+int			ft_octal_output(uintmax_t num, t_con *todo);
 char		*ft_hex_base(uintmax_t num, int cap);
-int			ft_hex(uintmax_t num, t_conditions *todo);
-int			ft_unint_output(uintmax_t num, t_conditions *todo);
-int			ft_ft_prestrpad(int min, char *y, t_conditions *todo);
+int			ft_hex(uintmax_t num, t_con *todo);
+int			ft_unint_output(uintmax_t num, t_con *todo);
+int			ft_ft_prestrpad(int min, char *y, t_con *todo);
 #endif
 

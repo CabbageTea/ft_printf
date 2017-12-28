@@ -1,12 +1,8 @@
 #include "ft_printf.h"
 
-int		ft_padding(int min, t_conditions todo);
-//int		ft_zerohex(t_conditions *todo)
-//{
+int		ft_padding(int min, t_con todo);
 
-
-
-int		ft_octal_output(uintmax_t num, t_conditions *todo)
+int		ft_octal_output(uintmax_t num, t_con *todo)
 {
 	char *oct;
 	int len;
@@ -37,7 +33,7 @@ int		ft_octal_output(uintmax_t num, t_conditions *todo)
 	return (len);
 }
 
-int		ft_hex(uintmax_t num, t_conditions *todo)
+int		ft_hex(uintmax_t num, t_con *todo)
 {
 	char *hex;
 	int len;
@@ -65,7 +61,7 @@ int		ft_hex(uintmax_t num, t_conditions *todo)
 		len = len + ft_padding(todo->min_width - len, *todo);
 	return (len);
 }
-int		ft_unint_output(uintmax_t num, t_conditions *todo)
+int		ft_unint_output(uintmax_t num, t_con *todo)
 {
 	int len;
 	len = ft_unintlen(num);	

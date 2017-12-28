@@ -1,6 +1,6 @@
 #include "ft_printf.h"
-int		ft_padding(int min, t_conditions todo);
-int		ft_prestrpad(int min, char *y, t_conditions *todo);
+int		ft_padding(int min, t_con todo);
+int		ft_prestrpad(int min, char *y, t_con *todo);
 
 int		ft_nullstr(int i)
 {
@@ -8,7 +8,7 @@ int		ft_nullstr(int i)
 	return (6 + i);
 }
 
-int		ft_char_output(t_conditions *todo, va_list ap)
+int		ft_char_output(t_con *todo, va_list ap)
 {
 	int x;
 	char y;
@@ -29,7 +29,7 @@ int		ft_char_output(t_conditions *todo, va_list ap)
 	return (x);
 }
 
-int		ft_str_output(t_conditions *todo, va_list ap)
+int		ft_str_output(t_con *todo, va_list ap)
 {
 	int x;
 	char *y;
@@ -55,7 +55,7 @@ int		ft_str_output(t_conditions *todo, va_list ap)
 	return (x + ft_strlen(y));
 }
 
-int		ft_percisionstring(t_conditions *todo, va_list ap)
+int		ft_percisionstring(t_con *todo, va_list ap)
 {
 	int i;
 	int pad;
@@ -81,7 +81,7 @@ int		ft_percisionstring(t_conditions *todo, va_list ap)
 	return (i);
 }
 
-int		ft_letter_output(va_list ap, t_conditions *todo)
+int		ft_letter_output(va_list ap, t_con *todo)
 {
 	int x;
 	x = 0;

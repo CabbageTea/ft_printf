@@ -1,7 +1,7 @@
 #include "ft_printf.h"
-int		ft_us_digits_output(va_list ap, t_conditions *todo);
+int		ft_us_digits_output(va_list ap, t_con *todo);
 
-int	ft_precisionpadding(t_conditions todo)
+int	ft_precisionpadding(t_con todo)
 {
 	int i;
 	int x;
@@ -21,7 +21,7 @@ int	ft_precisionpadding(t_conditions todo)
 	return (x);
 }
 
-int		ft_output(int i, va_list ap, t_conditions *todo)
+int		ft_output(int i, va_list ap, t_con *todo)
 {
 		if (todo->ch == 'c' || todo->ch == 'C' || todo->ch == 's' || todo->ch == 'S' || todo->ch == '%')
 			i = i + ft_letter_output(ap, todo);
@@ -36,13 +36,13 @@ int		ft_output(int i, va_list ap, t_conditions *todo)
 }
 	
 
-int		ft_zpadding(int min, t_conditions todo)
+int		ft_zpadding(int min, t_con todo)
 {
 	int i;
 	i = 0;
 	if (todo.neg == 1)
 	{
-		write(1, "-", 1); ///
+		write(1, "-", 1);
 		i++;
 	}
 	if (todo.plus_flag == 1 && todo.neg == 0)
@@ -56,12 +56,12 @@ int		ft_zpadding(int min, t_conditions todo)
 		ft_putstr("0X");
 	while (i < min)
 	{
-		write(1, "0", 1); //change
+		write(1, "0", 1);
 		i++;
 	}
 	return (i);
 }
-int		ft_padding(int min, t_conditions todo)
+int		ft_padding(int min, t_con todo)
 {
 	int i;
 	int x;
@@ -73,7 +73,7 @@ int		ft_padding(int min, t_conditions todo)
 		min--;
 	while (i < min)
 	{
-		write(1, " ", 1); //change
+		write(1, " ", 1);
 		i++;
 	}
 	if (todo.neg == 1 && todo.minus_flag == 0)
@@ -90,7 +90,7 @@ int		ft_padding(int min, t_conditions todo)
 	return (i);
 }
 
-int		ft_preminuspadding(uintmax_t num, t_conditions *todo)
+int		ft_preminuspadding(uintmax_t num, t_con *todo)
 {
 	int i;
 	int zeros;
@@ -125,7 +125,7 @@ int		ft_preminuspadding(uintmax_t num, t_conditions *todo)
 	}
 	return (i);
 }
-int		ft_prezeropadding(uintmax_t num, t_conditions *todo)
+int		ft_prezeropadding(uintmax_t num, t_con *todo)
 {
 	int min;
 	int i;
@@ -168,5 +168,3 @@ int		ft_prezeropadding(uintmax_t num, t_conditions *todo)
 		ft_putnbr(num);
 	return (i + 1);
 }
-
-
