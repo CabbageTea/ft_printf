@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:29:58 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/27 21:36:28 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,3 @@ int		ft_printf(const char *format, ...)
 	va_end(ap);
 	return (ret);
 }
-
-/*int main(void)
-{	
-	ft_printf("%-05d", -42);
-	return (0);
-}*/

@@ -10,6 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror -I./
+
 NAME = libft.a
 
 SRC = ft_putchar.c \
@@ -85,9 +89,11 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	gcc -Werror -Wall -Wextra -c $(SRC)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
+# $(NAME):
+# 	gcc -Werror -Wall -Wextra -c $(SRC)
+# 	ar rcs $(NAME) $(OBJ)
 
 clean:
 	/bin/rm -f *.o
