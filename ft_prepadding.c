@@ -6,11 +6,12 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:03:33 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 20:40:32 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/28 11:07:00 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft/libft.h"
 
 int			preminpt2(uintmax_t num, int i, int zeros, t_con *todo)
 {
