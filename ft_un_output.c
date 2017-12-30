@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:49:56 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:35:58 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 22:38:38 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,21 @@ int		ft_hex(uintmax_t num, t_con *todo)
 		ft_putstr(hex);
 	if (todo->minus_flag == 1)
 		len = len + ft_padding(todo->min_width - len, *todo);
+	return (len);
+}
+
+int		ft_point_output(uintmax_t num)
+{
+	char *ret;
+	int len;
+	uintmax_t *p;
+
+	p = &num;
+	ret = ft_hex_base(*p, 0);
+	len = ft_strlen(ret);
+	len = len + 2;
+	ft_putstr("0x");
+	ft_putstr(ret);
 	return (len);
 }
 

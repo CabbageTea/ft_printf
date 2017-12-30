@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 21:31:09 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 22:38:33 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,7 @@ int				ft_us_digits_output(va_list ap, t_con *todo)
 		len = ft_hex(num, todo);
 	if (todo->ch == 'u' || todo->ch == 'U')
 		len = ft_unint_output(num, todo);
+	if (todo->ch == 'p')
+		len = ft_point_output(num);
 	return (len);
 }

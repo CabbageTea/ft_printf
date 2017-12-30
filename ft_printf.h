@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:06:15 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/28 11:00:49 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 22:37:52 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int					ft_isspecifier(char c);
 char				*ft_un_base(uintmax_t num, int base);
 int					ft_octal_output(uintmax_t num, t_con *todo, int len);
 char				*ft_hex_base(uintmax_t num, int cap);
+int					ft_point_output(uintmax_t num);
 int					ft_hex(uintmax_t num, t_con *todo);
 int					ft_unint_output(uintmax_t num, t_con *todo);
 int					ft_ft_prestrpad(int min, char *y, t_con *todo);
@@ -63,16 +64,6 @@ int					ft_check_char(const char *format, int i, t_con *todo);
 int					ft_isspecifier(char c);
 int					ft_counttosp(const char *format, int i);
 char				*ft_strrev(char *str);
-/*
-void				ft_bzero(void *str, size_t n);
-int					ft_strlen(const char *str);
-int					ft_isdigits(int a);
-int					ft_atoi(const char *str);
-void				ft_putnbr(int a);
-void				ft_putstr(char *str);
-int					ft_intlen(intmax_t a);
-void				ft_putchar(char c);
-int					ft_putnbrnmax(intmax_t a);
 char				*ft_strnew(size_t size);
-*/
+
 #endif
