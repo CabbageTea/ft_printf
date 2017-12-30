@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:49:56 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:21:12 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 23:24:22 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ int		ft_point_output(uintmax_t num)
 	uintmax_t *p;
 
 	p = &num;
-	ft_putnbr(*p);
-	printf("\n%x\n", *p);
 	ret = ft_hex_base(*p, 0);
 	len = ft_strlen(ret);
 	len = len + 2;
