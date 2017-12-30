@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:25:17 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 23:27:24 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ int				ft_digits_output(va_list ap, t_con *todo)
 	int			len;
 
 	len = 0;
+	if (todo->ch == 'D')
+		todo->mod = 3;
 	num = ft_dig_arg(ap, todo);
 	todo->intlen = ft_intlen(num);
 	if (num < 0)
