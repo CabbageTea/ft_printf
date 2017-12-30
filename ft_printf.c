@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:36:28 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 20:50:59 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int		ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 		num = num + ft_output(0, ap, todo);
 		num = ft_new(fo, num, todo, ap);
 	}
+	i = 0;
 	return (num);
 }
 
