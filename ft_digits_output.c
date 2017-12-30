@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:27:24 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 23:47:16 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int				ft_dig_2(long long num, int len, t_con *todo)
 	}
 	if (todo->minus_flag == 0 && todo->precision > ft_intlen(len))
 		len = ft_padding(todo->min_width - todo->precision, *todo);
-	if (todo->minus_flag == 1 && todo->neg == 1 && todo->min_width != 0)
+	if (todo->minus_flag == 1 && todo->neg == 1)
 		num = num * -1;
 	if (todo->neg == 0 && todo->plus_flag == 0 &&
 			todo->space_flag == 1 && todo->dot_flag == 0)
