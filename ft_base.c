@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:49:16 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:23:44 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 22:55:01 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_hex_base(uintmax_t num, int cap)
 
 	i = 0;
 	x = 0;
-	ret = (char *)malloc(sizeof(char) * 30);
+	ret = (char *)malloc(sizeof(char) * 60);
 	if (num == 0)
 		ret[i++] = x + 48;
 	while (num > 0)
