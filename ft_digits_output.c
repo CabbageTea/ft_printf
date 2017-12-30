@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:15:25 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 21:02:30 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ int				ft_digits_output(va_list ap, t_con *todo)
 		num = num * -1;
 		todo->neg = 1;
 	}
+	if (todo->minus_flag == 0 && todo->min_width > 0 && todo->space_flag == 1 && todo->precision == 0)
+		todo->min_width--;
 	if (todo->minus_flag == 1 && todo->dot_flag == 1)
 		return (ft_preminuspadding(num, todo));
 	if (todo->dot_flag == 1 && todo->min_width > todo->precision)
