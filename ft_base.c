@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:49:16 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:16:29 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/29 23:18:56 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ char		*ft_hex_base(uintmax_t num, int cap)
 			ret[i] = x + 55;
 		else if (cap == 0)
 			ret[i] = x + 87;
-		ft_putchar('\n');
-		ft_putchar(ret[i]);
-		ft_putchar('\n');
 		i++;
 	}
 	ret[i] = '\0';
