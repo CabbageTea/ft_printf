@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 20:49:31 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 20:51:07 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,6 @@ int		ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 {
 	int				flag;
 	static size_t	i;
-	ft_putstr("yo");
-	return (1);
-	ft_putstr("yo");
 
 	flag = 0;
 
