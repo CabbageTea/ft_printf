@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 17:11:19 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 20:45:57 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int		ft_printf(const char *format, ...)
 	t_con		todo;
 
 	va_start(ap, format);
+	ft_putstr("yo");
 	ret = ft_new(format, 0, &todo, ap);
 	va_end(ap);
 	return (ret);
