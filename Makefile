@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/30 20:52:21 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/30 20:53:19 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft/
-	ar rcs $(NAME)  $(OBJ) libft/*.o
+	ar rcs $(NAME) $(OBJ) libft/*.o
 
 #$(NAME):
 #	make -C libft/

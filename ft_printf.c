@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 20:51:07 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 20:58:31 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int		ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 	static size_t	i;
 
 	flag = 0;
-
 	ft_bzero(todo, sizeof(t_con));
 	while ((fo[i] != '\0') && (fo[i] != '%') && (i < ft_strlen(fo)))
 	{
