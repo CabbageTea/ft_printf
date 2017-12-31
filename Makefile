@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/28 11:17:05 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/30 19:22:01 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,22 @@ SRC =	ft_check_flags.c \
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-#
+
 $(NAME): $(OBJ)
 	make -C libft/
-	ar rc $(NAME)  $(OBJ) libft/*.o
+	ar rcs $(NAME)  $(OBJ) libft/*.o
+
 #$(NAME):
 #	make -C libft/
 #	gcc -I ./ -c -Werror -Wextra -Wall $(SRC) -I libft/
 #	ar rc $(NAME)  *.o libft/*.o
+
 clean:
 	/bin/rm -f *.o
 	make -C libft/ clean
+
 fclean: clean
 	/bin/rm -f $(NAME)
 	/bin/rm -f libft/libft.a
+
 re: fclean all
-
-
