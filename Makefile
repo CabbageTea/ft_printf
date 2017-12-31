@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/30 19:22:01 by dglaser          ###   ########.fr        #
+#    Updated: 2017/12/30 20:47:57 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME): $(OBJ)
 
 clean:
 	/bin/rm -f *.o
-	make -C libft/ clean
+	make clean -C libft/
 
 fclean: clean
 	/bin/rm -f $(NAME)
