@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 20:58:31 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 22:03:49 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ int		ft_icfs(const char *format, int i, t_con *todo)
 	ft_check_mod(format, i + 1, todo);
 	x = ft_counttosp(format, i + 1);
 	if (y == 0)
-		exit(0);
-	return (x);
+	{
+		ft_putstr("error");
+		return (-1);
+	}
+	return (x + i);
 }
 
 int		ft_percent(int i, int *flag, size_t *num)
@@ -76,10 +79,10 @@ int		ft_new(const char *fo, size_t num, t_con *todo, va_list ap)
 		i++;
 		num++;
 	}
-	if (fo[i] != '\0' && fo[i] == '%' && fo[i + 1] != '%')
+	if (fo[i] != '\0' && fo[i] == '%' && fo[i + 1] != '%' && (flag = 1))
 	{
-		i = i + ft_icfs(fo, i, todo) + 1;
-		flag = 1;
+		if ((i = ft_icfs(fo, i, todo) + 1) == 0)
+			return (0);
 	}
 	else if (fo[i] != '\0' && fo[i] == '%' && fo[i + 1] == '%')
 		i = ft_percent(i, &flag, &num);
