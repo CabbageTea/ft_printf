@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:28:57 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 20:50:59 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 17:11:19 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,3 +103,16 @@ int		ft_printf(const char *format, ...)
 	va_end(ap);
 	return (ret);
 }
+
+/*int	main(void)
+{
+	char *s1 = "Jello";
+	char *s2 = "Hello world";
+	char  s3  = 'a';
+
+	ft_printf("%s", s1);
+	ft_printf("%s", s2);
+	ft_printf("%c", s3);
+	while (1) ;
+return (0);
+}*/

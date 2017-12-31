@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:49:56 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:24:22 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 19:35:08 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int		ft_hex(uintmax_t num, t_con *todo)
 
 int		ft_point_output(uintmax_t num)
 {
-	char *ret;
-	int len;
-	uintmax_t *p;
+	char		*ret;
+	int			len;
+	uintmax_t	*p;
 
 	p = &num;
 	ret = ft_hex_base(*p, 0);

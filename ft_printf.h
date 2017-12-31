@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:06:15 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 22:37:52 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 19:45:47 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int					ft_printf(const char *format, ...);
 int					ft_letter_output(va_list ap, t_con *todo);
 int					ft_precision(int i, const char *format, t_con *todo);
 int					ft_output(int i, va_list ap, t_con *todo);
-int					ft_digits_output(va_list ap, t_con *todo);
+int					ft_digits_output(va_list ap, t_con *todo, int len);
 int					ft_isspecifier(char c);
 char				*ft_un_base(uintmax_t num, int base);
 int					ft_octal_output(uintmax_t num, t_con *todo, int len);
@@ -64,6 +64,7 @@ int					ft_check_char(const char *format, int i, t_con *todo);
 int					ft_isspecifier(char c);
 int					ft_counttosp(const char *format, int i);
 char				*ft_strrev(char *str);
+int					ft_thissaves6lines(int len);
 char				*ft_strnew(size_t size);
 
 #endif

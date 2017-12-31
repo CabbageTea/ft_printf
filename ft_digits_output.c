@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/29 23:47:16 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 19:45:23 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,18 @@ int				ft_dig_2(long long num, int len, t_con *todo)
 {
 	if (todo->minus_flag == 0 && todo->dot_flag == 1 &&
 			todo->precision > todo->min_width
-		   && todo->zero_flag && todo->space_flag == 0)
+			&& todo->zero_flag && todo->space_flag == 0)
 		return (ft_prezeropadding(num, todo));
 	if (todo->minus_flag == 0 && todo->precision > ft_intlen(len)
 			&& todo->space_flag)
-	{
-		ft_putchar(' ');
-		len++;
-	}
+		len = ft_thissaves6lines(len);
 	if (todo->minus_flag == 0 && todo->precision > ft_intlen(len))
 		len = ft_padding(todo->min_width - todo->precision, *todo);
 	if (todo->minus_flag == 1 && todo->neg == 1)
 		num = num * -1;
 	if (todo->neg == 0 && todo->plus_flag == 0 &&
 			todo->space_flag == 1 && todo->dot_flag == 0)
-	{
-		len++;
-		ft_putchar(' ');
-	}
+		len = ft_thissaves6lines(len);
 	len = len + ft_intlen(num);
 	if (num == 0 && todo->dot_flag == 1)
 		return (len - 1);
@@ -81,12 +75,10 @@ int				ft_dig_2(long long num, int len, t_con *todo)
 	return (len);
 }
 
-int				ft_digits_output(va_list ap, t_con *todo)
+int				ft_digits_output(va_list ap, t_con *todo, int len)
 {
 	long long	num;
-	int			len;
 
-	len = 0;
 	if (todo->ch == 'D')
 		todo->mod = 3;
 	num = ft_dig_arg(ap, todo);
@@ -96,7 +88,8 @@ int				ft_digits_output(va_list ap, t_con *todo)
 		num = num * -1;
 		todo->neg = 1;
 	}
-	if (todo->minus_flag == 0 && todo->min_width > 0 && todo->space_flag == 1 && todo->precision == 0)
+	if (todo->minus_flag == 0 && todo->min_width > 0 &&
+			todo->space_flag == 1 && todo->precision == 0)
 		todo->min_width--;
 	if (todo->minus_flag == 1 && todo->dot_flag == 1)
 		return (ft_preminuspadding(num, todo));
@@ -116,7 +109,7 @@ int				ft_us_digits_output(va_list ap, t_con *todo)
 	int			len;
 
 	len = 0;
-	if (todo->ch == 'U' || todo->ch == 'p' )
+	if (todo->ch == 'U' || todo->ch == 'p')
 		todo->mod = 3;
 	num = ft_usdig_arg(ap, todo);
 	todo->plus_flag = 0;

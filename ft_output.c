@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:03:33 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 21:20:04 by dglaser          ###   ########.fr       */
+/*   Updated: 2017/12/30 19:43:45 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,20 @@ int			ft_precisionpadding(t_con todo)
 	return (x);
 }
 
+int			ft_thissaves6lines(int len)
+{
+	len++;
+	ft_putchar(' ');
+	return (len);
+}
+
 int			ft_output(int i, va_list ap, t_con *todo)
 {
 	if (todo->ch == 'c' || todo->ch == 'C' ||
 		todo->ch == 's' || todo->ch == 'S' || todo->ch == '%')
 		i = i + ft_letter_output(ap, todo);
 	if ((todo->ch == 'd') || (todo->ch == 'D') || (todo->ch == 'i'))
-		i = i + ft_digits_output(ap, todo);
+		i = i + ft_digits_output(ap, todo, 0);
 	if ((todo->ch == 'o') || (todo->ch == 'O') ||
 		(todo->ch == 'u') || (todo->ch == 'U') ||
 		(todo->ch == 'x') || (todo->ch == 'X') ||
