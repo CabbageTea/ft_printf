@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:06:15 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 23:02:17 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/02 00:19:27 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int					ft_counttosp(const char *format, int i);
 char				*ft_strrev(char *str);
 int					ft_thissaves6lines(int len);
 char				*ft_strnew(size_t size);
-int					ft_percisionwstring(t_con *todo, va_list ap, int i, int pad);
+int					ft_percisionwstring(t_con *to, va_list ap, int i, int p);
 int					ft_wstr_output(t_con *todo, va_list ap, int i, int x);
 
 #endif

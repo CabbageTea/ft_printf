@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/02 00:20:00 by dglaser           #+#    #+#             */
+/*   Updated: 2018/01/02 00:22:46 by dglaser          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int		ft_prewstrpad(int min, wchar_t *y, t_con *todo, int i)
@@ -37,14 +49,11 @@ int		ft_wstr_output(t_con *todo, va_list ap, int i, int x)
 	if (y == NULL)
 		return (ft_nullstr(x));
 	if (todo->min_width > 0 && todo->minus_flag == 0)
-	   	x = ft_padding(todo->min_width - ft_wstrlen(y), *todo);
+		x = ft_padding(todo->min_width - ft_wstrlen(y), *todo);
 	if (todo->dot_flag == 1)
 	{
-		while (i < todo->precision && y[i] != '\0')
-		{
+		while (i++ < todo->precision && y[i] != '\0')
 			write(1, &y[i], 1);
-			i++;
-		}
 	}
 	else
 	{
@@ -55,10 +64,9 @@ int		ft_wstr_output(t_con *todo, va_list ap, int i, int x)
 		}
 	}
 	if (todo->min_width > 0 && todo->minus_flag == 1)
-		x = ft_padding(todo->min_width - ft_wstrlen(y), * todo);
+		x = ft_padding(todo->min_width - ft_wstrlen(y), *todo);
 	return (x + ft_wstrlen(y));
 }
-
 
 int		ft_percisionwstring(t_con *todo, va_list ap, int i, int pad)
 {
