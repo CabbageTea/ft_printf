@@ -31,7 +31,7 @@ int		ft_prewstrpad(int min, wchar_t *y, t_con *todo, int i)
 
 int		ft_wstr_output(t_con *todo, va_list ap, int i, int x)
 {
-	//ft_putstr("YOYOY");
+	ft_putstr("YOYOY");
 	wchar_t	*y;
 
 	y = va_arg(ap, wchar_t *);
