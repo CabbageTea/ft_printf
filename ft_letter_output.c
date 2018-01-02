@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:49:29 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 18:04:21 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 18:08:29 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,16 @@ int			ft_char_output(t_con *todo, va_list ap)
 	return (x);
 }
 
-int			ft_str_output(t_con *todo, va_list ap, int wide, int i)
+int			ft_str_output(t_con *todo, va_list ap)
 {
 	int		x;
 	char	*y;
-	wchar_t * t;
+	int		i;
 
 	x = 0;
-	if (wide == 0)
-	{
-		y = va_arg(ap, char *);
-		t = NULL;
-	}
-	else
-	{
-		t = va_arg(ap, wchar_t *);
-		y = NULL;
-	}
-	if (y == NULL && t == NULL)
+	i = 0;
+	y = va_arg(ap, char *);
+	if (y == NULL)
 		return (ft_nullstr(x));
 	if (todo->min_width > 0 && todo->minus_flag == 0)
 		x = ft_padding(todo->min_width - ft_strlen(y), *todo);
@@ -73,16 +65,14 @@ int			ft_str_output(t_con *todo, va_list ap, int wide, int i)
 	return (x + ft_strlen(y));
 }
 
-int			ft_percisionstring(t_con *todo, va_list ap, int wide, int i)
+int			ft_percisionstring(t_con *todo, va_list ap)
 {
+	int		i;
 	int		pad;
 	char	*y;
-	wchar_t *x;
 
-	if (wide == 0)
-		y = va_arg(ap, char *);
-	if (wide == 1)
-		x = va_arg(ap, wchar_t *);
+	i = 0;
+	y = va_arg(ap, char *);
 	if ((int)ft_strlen(y) > todo->precision)
 		pad = todo->precision;
 	else
@@ -111,17 +101,13 @@ int			ft_letter_output(va_list ap, t_con *todo)
 	}
 	if (todo->dot_flag == 0)
 	{
-		if (todo->ch == 's')
-			x = ft_str_output(todo, ap, 0, 0);
-		if (todo->ch == 'S')
-			x = ft_str_output(todo, ap, 1, 0);
+		if (todo->ch == 's' || todo->ch == 'S')
+			x = ft_str_output(todo, ap);
 	}
 	if (todo->dot_flag == 1)
 	{
-		if (todo->ch == 's')
-			x = ft_percisionstring(todo, ap, 0, 0);
-		if (todo->ch == 'S')
-			x = ft_percisionstring(todo, ap, 1, 0);
+		if (todo->ch == 's' || todo->ch == 'S')
+			x = ft_percisionstring(todo, ap);
 	}
 	return (x);
 }
