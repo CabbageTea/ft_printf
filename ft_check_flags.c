@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:59:15 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 17:07:52 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 17:40:36 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_star_flag(t_con *todo, int i, const char *fo)
 {
 	todo->star_flag = 1;
 	if (fo[i - 1] == '.')
-		todo->star_width = 1;
-	else
 		todo->star_prec = 1;
+	else
+		todo->star_width = 1;
 }
 
 int		ft_width(int i, const char *format, t_con *todo)
