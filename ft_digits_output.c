@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:41:32 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 21:34:07 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 18:30:19 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int				ft_us_digits_output(va_list ap, t_con *todo)
 	int			len;
 
 	len = 0;
-	if (todo->ch == 'U' || todo->ch == 'p')
+	if (todo->ch == 'U' || todo->ch == 'p' || todo->ch == 'O')
 		todo->mod = 3;
 	num = ft_usdig_arg(ap, todo);
 	todo->plus_flag = 0;

@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/04 14:07:22 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/30 20:53:19 by dglaser          ###   ########.fr        #
+#    Updated: 2018/01/01 23:01:46 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC =	ft_check_flags.c \
 		ft_un_output.c \
 		ft_prestrpad.c \
 		ft_prepadding.c \
+		ft_putwstr.c \
 		ft_ismod.c
 
 OBJ = $(SRC:.c=.o)

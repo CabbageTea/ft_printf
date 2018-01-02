@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 21:01:42 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/21 22:41:00 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 22:53:45 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void				ft_un_putnbr(uintmax_t a);
 void				ft_putintstr(int *num);
 void				ft_putnbrmax(intmax_t a);
 void				ft_putnbrunmax(uintmax_t a);
+int					ft_wstrlen(wchar_t *str);
 
 #endif

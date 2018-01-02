@@ -6,7 +6,7 @@
 #    By: dglaser <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/05 14:24:42 by dglaser           #+#    #+#              #
-#    Updated: 2017/12/21 22:41:29 by dglaser          ###   ########.fr        #
+#    Updated: 2018/01/01 22:54:50 by dglaser          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRC = ft_putchar.c \
 	  ft_strmapi.c \
 	  ft_strtrim.c \
 	  ft_putnbr_fd.c \
+	  ft_wstrlen.c \
 	  ft_strncat.c \
 	  ft_strnstr.c \
 	  ft_memmove.c \

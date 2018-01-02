@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:49:56 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 18:57:31 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 19:06:48 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int		ft_octal_output(uintmax_t num, t_con *todo, int len)
 	if (todo->hash_flag == 1)
 		len++;
 	buf = todo->precision - len;
-//	if (buf > 0)
-//		len = len + buf;
-   	buf > 0 ? len = len + buf : 0;
-	//len = buf > 0 ? len + buf : len;
+	buf > 0 ? len = len + buf : 0;
 	if (todo->minus_flag == 0)
 		len = len + ft_padding(todo->min_width - len, *todo);
 	if (todo->hash_flag == 1)
@@ -38,6 +35,7 @@ int		ft_octal_output(uintmax_t num, t_con *todo, int len)
 		len++;
 	}
 	ft_putstr(oct);
+	free(oct);
 	if (todo->minus_flag == 1)
 		len = len + ft_padding(todo->min_width - len, *todo);
 	return (len);
@@ -52,8 +50,7 @@ int		ft_hex(uintmax_t num, t_con *todo)
 		return (0);
 	hex = ft_hex_base(num, (todo->ch == 'x' ? 0 : 1));
 	len = ft_strlen(hex);
-	if (todo->hash_flag == 1 && num != 0)
-		len = len + 2;
+	todo->hash_flag && num != 0 ? len = len + 2 : len;
 	if (todo->minus_flag == 0)
 		len = len + ft_padding(todo->min_width - len, *todo);
 	if (todo->zero_flag == 0 || todo->minus_flag)
@@ -69,6 +66,7 @@ int		ft_hex(uintmax_t num, t_con *todo)
 		ft_putstr(hex);
 	if (todo->minus_flag == 1)
 		len = len + ft_padding(todo->min_width - len, *todo);
+	free(hex);
 	return (len);
 }
 
@@ -84,6 +82,7 @@ int		ft_point_output(uintmax_t num)
 	len = len + 2;
 	ft_putstr("0x");
 	ft_putstr(ret);
+	free(ret);
 	return (len);
 }
 

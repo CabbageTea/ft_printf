@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:06:15 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 17:04:47 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 23:02:17 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int					ft_prezeropadding(uintmax_t num, t_con *todo);
 int					ft_preminuspadding(uintmax_t num, t_con *todo);
 int					ft_precisionpadding(t_con todo);
 int					ft_padding(int min, t_con todo);
+int					ft_nullstr(int i);
 int					ft_prestrpad(int min, char *y, t_con *todo, int i);
 int					ft_us_digits_output(va_list ap, t_con *todo);
 int					ft_check_flags(const char *fo, int i, t_con *todo, int x);
@@ -69,5 +70,7 @@ int					ft_counttosp(const char *format, int i);
 char				*ft_strrev(char *str);
 int					ft_thissaves6lines(int len);
 char				*ft_strnew(size_t size);
+int					ft_percisionwstring(t_con *todo, va_list ap, int i, int pad);
+int					ft_wstr_output(t_con *todo, va_list ap, int i, int x);
 
 #endif
