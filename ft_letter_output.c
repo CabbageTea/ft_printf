@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:49:29 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/02 00:01:44 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/02 00:11:41 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,10 @@ int			ft_letter_output(va_list ap, t_con *todo)
 	if (todo->dot_flag == 0)
 	{
 		if (todo->ch == 's')
+		{
 			x = ft_str_output(todo, ap);
+			ft_putstr("that's not fair");
+		}
 		if (todo->ch == 'S')
 		{
 			ft_putstr("part1");
