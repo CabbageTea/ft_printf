@@ -31,6 +31,7 @@ int		ft_prewstrpad(int min, wchar_t *y, t_con *todo, int i)
 
 int		ft_wstr_output(t_con *todo, va_list ap, int i, int x)
 {
+	ft_putstr("YOYOY");
 	wchar_t	*y;
 
 	y = va_arg(ap, wchar_t *);
@@ -56,7 +57,6 @@ int		ft_wstr_output(t_con *todo, va_list ap, int i, int x)
 	}
 	if (todo->min_width > 0 && todo->minus_flag == 1)
 		x = ft_padding(todo->min_width - ft_wstrlen(y), * todo);
-	ft_putstr("Hello");
 	return (x + ft_wstrlen(y));
 }
 
