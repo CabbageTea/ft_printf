@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:49:29 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/02 00:13:12 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/02 00:14:53 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,8 @@ int			ft_letter_output(va_list ap, t_con *todo)
 	}
 	if (todo->dot_flag == 0)
 	{
-		if (todo->ch == 's')
-		{
+		if (todo->ch == 's' && todo->mod != 3)
 			x = ft_str_output(todo, ap);
-			ft_putstr("that's not fair");
-		}
 		if (todo->ch == 's' && todo->mod == 3)
 		{
 			ft_putstr("part1");
@@ -114,7 +111,7 @@ int			ft_letter_output(va_list ap, t_con *todo)
 	}
 	if (todo->dot_flag == 1)
 	{
-		if (todo->ch == 's')
+		if (todo->ch == 's' && todo->mod != 3)
 			x = ft_percisionstring(todo, ap);
 		if (todo->ch == 'S' && todo->mod == 3)
 		{
