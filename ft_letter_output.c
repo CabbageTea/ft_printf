@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:49:29 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/02 00:14:53 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/02 00:15:52 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,20 +104,14 @@ int			ft_letter_output(va_list ap, t_con *todo)
 		if (todo->ch == 's' && todo->mod != 3)
 			x = ft_str_output(todo, ap);
 		if (todo->ch == 's' && todo->mod == 3)
-		{
-			ft_putstr("part1");
 			x = ft_wstr_output(todo, ap, 0, 0);
-		}
 	}
 	if (todo->dot_flag == 1)
 	{
 		if (todo->ch == 's' && todo->mod != 3)
 			x = ft_percisionstring(todo, ap);
 		if (todo->ch == 'S' && todo->mod == 3)
-		{
 			x = ft_percisionwstring(todo, ap, 0, 0);
-			ft_putstr("part2");
-		}
 	}
 	return (x);
 }
