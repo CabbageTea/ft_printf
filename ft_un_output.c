@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:49:56 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 19:35:08 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 18:57:31 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int		ft_octal_output(uintmax_t num, t_con *todo, int len)
 	if (todo->hash_flag == 1)
 		len++;
 	buf = todo->precision - len;
-	if (buf > 0)
-		len = len + buf;
+//	if (buf > 0)
+//		len = len + buf;
+   	buf > 0 ? len = len + buf : 0;
+	//len = buf > 0 ? len + buf : len;
 	if (todo->minus_flag == 0)
 		len = len + ft_padding(todo->min_width - len, *todo);
 	if (todo->hash_flag == 1)
