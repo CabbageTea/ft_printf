@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 20:03:33 by dglaser           #+#    #+#             */
-/*   Updated: 2018/01/01 17:13:09 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 17:14:31 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			ft_thissaves6lines(int len)
 int			ft_output(int i, va_list ap, t_con *todo)
 {
 	if (todo->star_width == 1)
-		todo->width = (va_arg(ap, int));
+		todo->min_width = (va_arg(ap, int));
 	if (todo->star_prec == 1)
 		todo->precision = (va_arg(ap, int));
 	if (todo->ch == 'c' || todo->ch == 'C' ||
