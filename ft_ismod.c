@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 19:44:59 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/27 19:45:00 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 17:24:49 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ int		ft_counttosp(const char *format, int i)
 	while (format[i] != '\0' &&
 			(!ft_isspecifier(format[i])) && format[i] != '%')
 	{
-		if (ft_isflag(format[i]) || ft_istypespecifier(format[i])
-					|| ft_isdigit(format[i]) || format[i] == '%')
-			x++;
+//		if (ft_isflag(format[i]) || ft_istypespecifier(format[i])
+//					|| ft_isdigit(format[i]) || format[i] == '%')
+//			x++;
 		i++;
+		x++;
 	}
 	return (x + 1);
 }
