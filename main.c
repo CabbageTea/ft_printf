@@ -12,8 +12,13 @@ int main(void)
 }*/
 {
 	// test->debug = 1;
-	ft_printf("{%10d}", 42);
-	ft_printf("{%-30S}", L"我是一只猫。");
-	ft_printf("%5.5%");
-	return (0);
+	ft_printf("*.5i 42 == |% *.5i|\n", 4, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 5, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 3, 42);
+	ft_printf("%%*i 42 == |%kokokoki|\n", 2, 42);
+	ft_printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
+	ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 5, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 3, 42);
+	ft_printf("%%*i 42 == |%*i|\n", 2, 42);
 }

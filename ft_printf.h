@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 21:06:15 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 19:45:47 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 17:04:47 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ typedef struct		s_conditions
 	int				neg;
 	int				intlen;
 	int				mod;
+	int				star_flag;
+	int				star_width;
+	int				star_prec;
 
 }					t_con;
 

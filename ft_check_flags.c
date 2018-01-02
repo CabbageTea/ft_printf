@@ -6,7 +6,7 @@
 /*   By: dglaser <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/27 17:59:15 by dglaser           #+#    #+#             */
-/*   Updated: 2017/12/30 19:10:16 by dglaser          ###   ########.fr       */
+/*   Updated: 2018/01/01 17:07:52 by dglaser          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ int		ft_check_char(const char *format, int i, t_con *todo)
 		return (1);
 	}
 	return (0);
+}
+void	ft_star_flag(t_con *todo, int i, const char *fo)
+{
+	todo->star_flag = 1;
+	if (fo[i - 1] == '.')
+		todo->star_width = 1;
+	else
+		todo->star_prec = 1;
 }
 
 int		ft_width(int i, const char *format, t_con *todo)
@@ -86,6 +94,8 @@ int		ft_check_flags(const char *fo, int i, t_con *todo, int x)
 			todo->plus_flag = 1;
 		else if (fo[i] == ' ' && !ft_isspecifier(fo[i - 1]))
 			todo->space_flag = 1;
+		else if (fo[i] == '*')
+			ft_star_flag(todo, i, fo);
 		i++;
 		x++;
 	}
